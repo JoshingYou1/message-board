@@ -4,21 +4,21 @@ class UsersController < ApplicationController
   end
 
   def new
-    @users = User.new
+    @user = User.new
   end
 
   def create
-    user = User.new(user_params)
+    @user = User.new(user_params)
 
-    user.email.downcase!
+    @user.email.downcase!
 
-    if user.save
+    if @user.save
       session[:user_id] = user.id
       flash[:success] = 'User successfully created!'
-      redirect_to '/users#index'
+      redirect_to '/dashboard'
     else
-      flash[:error] = 'Invalid email or password. Please try again.'
-      redirect_to '/users/new'
+      flash.now[:error] = 'Invalid email or password. Please try again.'
+      render :new
     end
   end
 

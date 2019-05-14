@@ -1,0 +1,9 @@
+<% if current_user %>
+    <h1>Welcome to your dashboard!</h1>
+    Logged in as <%= current_user.email %>.
+    <%= link_to 'Log Out', '/logout' %>
+<% else %>
+    <%= flash[:error] = 'Sorry, but you must be logged in to view your dashboard.' %>
+    <%= controller.redirect_to '/' %>
+<% end %>
+<p id='notice'><%= notice %></p>
