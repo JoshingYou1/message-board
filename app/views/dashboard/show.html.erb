@@ -1,4 +1,5 @@
 <% if current_user %>
+    <%= render "layouts/header" %>
     <h1>Welcome to your dashboard!</h1>
     Logged in as <%= current_user.email %>.
     <%= link_to 'Log Out', '/logout' %>

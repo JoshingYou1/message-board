@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user.email.downcase!
 
     if @user.save
-      session[:user_id] = user.id
+      session[:user_id] = @user.id
       flash[:success] = 'User successfully created!'
       redirect_to '/dashboard'
     else

@@ -13,3 +13,26 @@
  */
  // Custom bootstrap variables must be set or imported *before* bootstrap.
  @import "bootstrap";
+
+.container-fluid {
+    padding: 0;
+}
+
+.nav-title, .nav-user, .nav-logout {
+    display: inline-block;
+}
+
+.nav-title {
+    width: 50%;
+}
+
+.nav-user {
+    width: 30%;
+    text-align: center;
+}
+
+.nav-logout {
+    width: 19%;
+    text-align: center;
+}
+
