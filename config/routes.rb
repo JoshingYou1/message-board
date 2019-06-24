@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root 'home#show'
   resources :messages
-  resources :users, only: [:index, :create, :edit, :show, :update, :destroy]
+  resources :users, only: [:index, :create, :edit, :show, :update, :destroy, :new]
  
-  get 'register', to: 'users#new', as: 'register'
+  # get 'register', to: 'users#new', as: 'register'
   get 'login', to: 'sessions#new', as: 'login'
   post '/login', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy', as: 'logout'

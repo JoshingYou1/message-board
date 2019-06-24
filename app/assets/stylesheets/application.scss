@@ -9,30 +9,54 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
-
+ *= require_tree
+ *= require_self
  */
  // Custom bootstrap variables must be set or imported *before* bootstrap.
- @import "bootstrap";
+@import "bootstrap";
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    color: #262626;
+}
 
 .container-fluid {
     padding: 0;
+    grid-row: 2 / 2;
+    display: grid;
 }
 
-.nav-title, .nav-user, .nav-logout {
-    display: inline-block;
+.mb-1 {
+    margin-bottom: 0 !important;
 }
 
-.nav-title {
-    width: 50%;
-}
-
-.nav-user {
-    width: 30%;
+h4 {
     text-align: center;
+    margin: 3em 0 2em 0;
 }
 
-.nav-logout {
-    width: 19%;
-    text-align: center;
+footer {
+    display: grid;
+}
+
+@media only screen and (min-width: 768px) {
+    .navbar-expand-sm .navbar-collapse {
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    h4 {
+        font-size: 40px;
+        margin: 0;
+        line-height: unset;
+    }
+
 }
 

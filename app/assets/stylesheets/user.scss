@@ -1,3 +1,51 @@
 // Place all the styles related to the user controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.register-container h2 {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.register-form-container {
+    width: 100%;
+}
+
+.register-form-container form {
+    width: 75%;
+    margin: 0 auto;
+    font-weight: 500;
+}
+
+.register-form-container form label {
+    display: block;
+    margin-bottom: 0.3em;
+    color: #404040;
+}
+
+.register-form-container form input {
+    width: 100%;
+    padding: 0.6em 0;
+    border: 1px solid #e9eaea;
+    border-radius: 2px;
+    margin-bottom: 1em;
+    text-indent: .8rem;
+}
+
+.register-form-container form input:focus {
+    outline: none;
+    border-color: #003791;
+}
+
+.register-submit input {
+    background-color: #003791;
+    color: white;
+    margin-top: 1em;
+    font-weight: 500;
+}
+
+@media only screen and (min-width: 1000px) {
+    .register-form-container form {
+        width: 45%;
+        margin: 0 auto;
+    }
+}

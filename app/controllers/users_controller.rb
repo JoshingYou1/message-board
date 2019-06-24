@@ -17,8 +17,8 @@ class UsersController < ApplicationController
       flash[:success] = 'User successfully created!'
       redirect_to '/dashboard'
     else
-      flash.now[:error] = 'Invalid email or password. Please try again.'
-      render :new
+      flash[:error] = 'Registration failed. Please try again'
+      redirect_to '/'
     end
   end
 

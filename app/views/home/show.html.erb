@@ -1,5 +1,15 @@
-<div class="container-fluid">
-    <h1>Welcome to the Shinō Academy</h1>
-    <p>Need an account? <%= link_to 'Register', register_path %></p>
-    <p>Already have an account? <%= link_to 'Login', login_path %></p>
+<%= render "layouts/alerts" %>
+<div class="home-container">
+    <% if current_page?('/') %>
+        <%= image_tag("consoles.jpg") %> 
+        <h4 id="home-intro">Come chat with other console gamers</h4>
+    <% end %>
+    <div class="register-container">
+    <h2>Get started</h2>
+    <%= render "users/form" %>
+        <p>Already registered? <%= link_to 'Login', login_path %></p>
+        <% if current_page?('/login') %>
+            <p>Not registered yet? <%= link_to 'Register', register_path %></p>
+        <% end %>
+    </div>
 </div>

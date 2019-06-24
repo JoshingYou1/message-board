@@ -1,7 +1,54 @@
 <header role="banner">
-    <nav role="navigation" class="nav-bar">
-        <div class="nav-title">Message Board</div>
-        <div class="nav-user"><%= current_user.email %></div>
-        <div class="nav-logout"><%= link_to 'Log Out', '/logout' %></div>
+    <nav class="mb-1 navbar navbar-expand-sm navbar-dark default-color">
+        <% if current_page?('/login') %>
+            <div class="logo-and-title">
+                <%= image_tag("logo.png") %> 
+                <div>Console Central</div>
+            </div>
+            <div class="nav-register">
+                <%= link_to 'Register', '/', method: :get%>
+            </div>
+        <% end %>
+        <% if current_page?('/') %>
+            <div class="logo-and-title">
+                <%= image_tag("logo.png") %> 
+                <div>Console Central</div>
+            </div>
+            <div class="nav-login">
+                <%= link_to 'Log in', '/login', method: :get %>
+            </div>
+        <% end %>
+        <% if current_user %>
+            <div class="logo-and-title">
+                <%= link_to dashboard_path do %>
+                    <%= image_tag("logo.png") %>
+                    <div>Console Central</div>
+                <% end %>
+            </div>
+            <div class="mobile-hide">
+                <div class="desktop-user">
+                    <%= current_user.email %>
+                </div>
+                <div class="desktop-logout">
+                    <%= link_to 'Log Out', '/logout' %>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse desktop-hide" id="navbarSupportedContent-333">
+                <ul class="navbar-nav ml-auto nav-flex-icons">
+                    <li class="nav-item dropdown">
+                        <a 
+                            class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" 
+                            aria-expanded="false"
+                        >
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                            <div class="dropdown-item" href="#"><%= current_user.email %></div>
+                            <%= link_to 'Log Out', '/logout' %>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        <% end %>
     </nav>
 </header>

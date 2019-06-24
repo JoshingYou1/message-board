@@ -1,3 +1,51 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+p {
+    text-align: center;
+}
+
+p a {
+    color: #003791;
+    font-weight: 500;
+}
+
+p a:hover {
+    color: #003791 !important;
+}
+
+.home-container img {
+    display: none;
+}
+
+@media only screen and (min-width: 1000px) {
+    .home-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-self: center;
+        margin: 1em 0 1em 0;
+    }
+
+    .home-container img {
+        display: block;
+        grid-column: 1 / 1;
+        align-self: center;
+        justify-self: center;
+    }
+
+    h4 {
+        position: absolute;
+        width: 350px;
+        background-color: #003791;
+        color: white;
+        padding: 20px;
+        top: 25%;
+        left: 25%;
+    }
+
+    .register-container {
+        grid-column: 2 / 2;
+        align-self: center;
+    }
+}
