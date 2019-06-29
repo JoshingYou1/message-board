@@ -1,16 +1,2 @@
-<div class="login-form-container">
-    <h2>Chat about your favorite games</h2>
-    <%= form_for :session do |f| %>
-        <div>
-            <%= f.label :email %>
-            <%= f.email_field :email %>
-        </div>
-        <div>
-            <%= f.label :password %>
-            <%= f.password_field :password %>
-        </div>
-        <div class="login-submit">
-            <%= f.submit 'Log in' %>
-        </div>
-    <% end %>
-</div>
+<%= render "layouts/alerts" %>
+<%= render "form" %>

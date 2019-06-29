@@ -5,8 +5,10 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :last_name, null: false
       t.string :email
       t.string :password_digest
+      t.string :time_zone, default: 'UTC'
       t.timestamps
     end
-    add_index :users, :email, unique: true
+
+    add_index(:users, :email, unique: true)
   end
 end

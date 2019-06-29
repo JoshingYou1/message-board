@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'home#show'
-  resources :messages
+  resources :posts
   resources :users, only: [:index, :create, :edit, :show, :update, :destroy, :new]
  
   # get 'register', to: 'users#new', as: 'register'

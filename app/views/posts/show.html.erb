@@ -1,0 +1,7 @@
+<h1><%= @post.title %></h1>
+<p>Posted by <%= @post.user.email %></p>
+<p>on<%= @post.created_at.to_s(:post_time) %></p>
+<p><%= @post.content %></p>
+<span><%= link_to "Edit", edit_post_path(@post) %></span>
+<span><%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure you want to delete this post?" } %></span>
+<p><%= link_to 'Back to dashboard', dashboard_path %></p>

@@ -1,6 +1,5 @@
 <div class="register-form-container">
   <%= form_for(User.new) do |f| %>
-  <%# <%= form_for @user do %>
     <div>
       <%= f.label :first_name %>
       <%= f.text_field :first_name %>
@@ -12,6 +11,10 @@
     <div>
       <%= f.label :email %>
       <%= f.email_field :email %>
+    </div>
+    <div>
+      <%= f.label :time_zone %>
+      <%= f.time_zone_select :time_zone %>
     </div>
     <div>
       <%= f.label :password %>
