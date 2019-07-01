@@ -2,22 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .posts-index-container {
-    padding: 0 8em 0 8em;
+    margin: 3em 20%;
 }
 
 .posts-h1, .new-post-container h1 {
-    margin: 1em 0 1em 0;
+    margin-bottom: 1em;
 }
 
 .post-container {
-    display: grid;
-    grid-template-columns: 1fr 0.75fr 0.5fr;
     width: 100%;
-    border: 2px solid #003791;
+    background: white;
+    border-radius: 4px;
+    border-style: solid;
+    border-color: #cccccc;
+    border-width: 1px;
+    margin-bottom: 10px;
 }
 
-.post-container:nth-child(n + 3) {
-    border-top: none;
+.post-container:hover {
+    border-color: #003791;
 }
 
 .post-container p {
@@ -26,41 +29,61 @@
     text-align: left;
 }
 
-.post-p1-container, .post-p2-container, .post--p3container {
-    height: 100%;
-    display: inherit;
-    align-items: center;
+// .post-p1-container, .post-p2-container, .post--p3container {
+//     height: 100%;
+//     display: inherit;
+//     align-items: center;
+// }
+
+.post-p1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #003791;
 }
 
-.post-p2-container, .post-p3-container {
-    border-left: 2px solid #003791;
+.post-p2 {
+    color: #7d8082;
+    font-size: 12px;
 }
 
-.posts-index-container a {
+.post-link {
+    color: inherit;
+}
+
+.post-link:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.new-post-link {
     display: block;
     background-color: #003791;
     text-align: center;
-    margin-top: 2em;
+    margin: 2em 0 2em 0;
     line-height: 50px;
-    border: 2px solid #003791;
     font-size: 20px;
     color: white;
     width: 150px;
     height: 50px;
+    border-radius: 4px;
 }
 
 .posts-index-container i {
     padding-left: 5px;
 }
 
-.posts-index-container a:hover {
+.new-post-link:hover {
     text-decoration: none;
     color: white;
 }
 
 .new-post-container {
     width: 40%;
-    margin: 0 auto 4em auto;
+    width: 40%;
+    margin: 3em auto;
+    padding: 1em;
+    background-color: white;
+    border-radius: 4px;
 }
 
 .post-form-container div {
@@ -113,6 +136,50 @@
     text-indent: unset;
     background-color: #003791;
     color: white;
-    border: 2px solid #003791;
     font-size: 20px;
+    border-radius: 4px;
+}
+
+.post-show-container {
+    width: 50%;
+    margin: 3em auto;
+    padding: 1em;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.post-show-container p {
+    text-align: unset;
+}
+
+.post-show-container h3 {
+    font-size: 20px;
+}
+
+.post-p3 {
+    font-size: 14px;
+    margin-top: 2em;
+}
+
+.post-p4 {
+    font-size: 12px;
+    margin-top: 25px;
+}
+
+.fa-pen, .fa-trash-alt {
+    padding: 4px;
+    color: #003791;
+    border-radius: 2px;
+    display: inline-block;
+    height: 25px;
+}
+
+.fa-pen {
+    margin-right: 5px;
+}
+
+.fa-pen:hover, .fa-trash-alt:hover {
+    background-color: #e6efff;
+    text-decoration: none;
+    color: #003791;
 }

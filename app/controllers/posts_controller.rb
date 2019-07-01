@@ -18,9 +18,11 @@ class PostsController < ApplicationController
         @post.user = current_user
 
         if @post.save
+            flash[:success] = 'Post successfully created!'
             redirect_to @post
         else
-            render 'new'
+            flash.now[:error] = 'Unable to create post. Please try again.'
+            render '/posts/new'
         end
     end
 

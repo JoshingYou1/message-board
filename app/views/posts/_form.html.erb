@@ -1,5 +1,5 @@
 <div class="post-form-container">
-    <%= form_for @post do |f| %>
+    <%= form_for @post, url: '/posts/new' do |f| %>
         <%= f.hidden_field :post_id, value: :user_id %>
         <div>
             <%= f.label :title %>

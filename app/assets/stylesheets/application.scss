@@ -30,6 +30,7 @@ body {
     padding: 0;
     grid-row: 2 / 2;
     // display: grid;
+    background-color: #e6e6e6;
 }
 
 .mb-1 {
@@ -54,7 +55,7 @@ footer {
 @media only screen and (min-width: 1000px) {
     h4 {
         font-size: 40px;
-        margin: 0;
+        margin: 2em 0 0 0;
         line-height: unset;
     }
 

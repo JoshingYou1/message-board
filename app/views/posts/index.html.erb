@@ -1,19 +1,19 @@
 <div class="posts-index-container">
-    <h1 class="posts-h1">All Posts</h1>
     <% @posts.each do |post| %>
+        <%= link_to post, class: "post-link" do %>
         <div class="post-container">
             <div class="post-p1-container">
                 <p class="post-p1"><%= post.title %></p>
             </div>
             <div class="post-p2-container">
-                <p class="post-p2">by <%= post.user.email %></p>
-            </div>
-            <div class="post-p3-container">
-                <p class="post-p3">on <%= post.created_at.to_s(:post_time) %></p>
+                <p class="post-p2">Posted by <%= post.user.email %> on <%= post.created_at.to_s(:post_time) %></p>
             </div>
         </div>
+        <% end %>
     <% end %>
-    <%= link_to new_post_path do %>
+    <div>
+        <%= link_to new_post_path, class: "new-post-link" do %>
             New Post <i class="fas fa-plus"></i>
         <% end %>
+    </div>
 </div>
