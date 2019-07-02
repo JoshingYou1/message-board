@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .register-container h2 {
-    margin-bottom: 1em;
+    margin: 1em 0 1em 0;
     text-align: center;
 }
 
@@ -36,6 +36,20 @@
     border-color: #003791;
 }
 
+.register-form-container form select {
+    width: 100%;
+    padding: 0.6em 0;
+    border: 1px solid #e9eaea;
+    border-radius: 2px;
+    margin-bottom: 1em;
+    text-indent: .8rem;
+}
+
+.register-form-container form input:select {
+    outline: none;
+    border-color: #003791;
+}
+
 .register-submit input {
     background-color: #003791;
     color: white;
@@ -44,8 +58,13 @@
 }
 
 @media only screen and (min-width: 1000px) {
+    .register-container {
+        width: 600px;
+        margin: 0 auto;
+    }
+    
     .register-form-container form {
-        width: 45%;
+        width: 50%;
         margin: 0 auto;
     }
 }

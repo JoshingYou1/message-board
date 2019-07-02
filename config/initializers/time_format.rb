@@ -1,0 +1,1 @@
+Time::DATE_FORMATS[:post_time] = "%B %e, %Y at %I:%M %p"

@@ -1,0 +1,25 @@
+<div class="post-form-container">
+    <%= form_for @post do |f| %>
+        <%= f.hidden_field :post_id, value: :user_id %>
+        <div>
+            <%= f.label :title %>
+            <%= f.text_field :title %>
+        </div>
+        <div>
+            <%= f.label :content %>
+            <%= f.text_area :content %>
+        </div>
+        <% if edit_post_path(@post) %>
+            <div class="post-submit">
+                <%= f.submit 'Edit' %>
+            </div>
+            <div class="cancel-edit-post">
+                <%= link_to 'Cancel', post_path(@post) %>
+            </div>
+        <% else %>
+            <div class="post-submit">
+                <%= f.submit 'Post' %>
+            </div>
+        <% end %>
+    <% end %>
+</div>

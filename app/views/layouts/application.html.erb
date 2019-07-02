@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
     <title>Console Central</title>
@@ -14,9 +14,11 @@
   </head>
   <body>
     <%= render "layouts/header"%>
-    <div class="container-fluid">
-      <%= yield %>
-    </div>
+      <div class="container-fluid">
+        <main role="main">
+          <%= yield %>
+        </main>
+      </div>
     <%= render "layouts/footer" %>
   </body>
 </html>

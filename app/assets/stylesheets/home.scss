@@ -24,7 +24,8 @@ p a:hover {
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-self: center;
-        margin: 1em 0 1em 0;
+        padding: 1em;
+        grid-column-gap: 1em;
     }
 
     .home-container img {
@@ -47,5 +48,7 @@ p a:hover {
     .register-container {
         grid-column: 2 / 2;
         align-self: center;
+        border-radius: 4px;
+        background-color: white;
     }
 }
