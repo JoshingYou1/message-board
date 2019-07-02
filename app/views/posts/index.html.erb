@@ -1,9 +1,10 @@
+<%= render "layouts/alerts" %>
 <div class="posts-index-container">
     <% @posts.each do |post| %>
         <%= link_to post, class: "post-link" do %>
         <div class="post-container">
             <div class="post-p1-container">
-                <p class="post-p1"><%= post.title %></p>
+                <p class="post-p1"><%= post.title %> <% if post.updated_at != post.created_at %>(updated)<% end %></p>
             </div>
             <div class="post-p2-container">
                 <p class="post-p2">Posted by <%= post.user.email %> on <%= post.created_at.to_s(:post_time) %></p>

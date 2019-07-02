@@ -6,7 +6,6 @@ class PostsController < ApplicationController
     end
 
     def show
-        @post = Post.find_by(id: params[:id])
     end
 
     def new
@@ -30,7 +29,9 @@ class PostsController < ApplicationController
     end
 
     def update
+        @post = Post.find_by(id: params[:id])
         if @post.update(post_params)
+            flash[:success] = 'Post successfully updated!'
             redirect_to @post
         else
             render 'edit'
@@ -38,6 +39,9 @@ class PostsController < ApplicationController
     end
 
     def destroy
+        @post.destroy
+        flash[:success] = 'Post successfully deleted!'
+        redirect_to '/posts'
     end
 
     private

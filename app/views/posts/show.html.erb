@@ -1,11 +1,11 @@
+<%= render "layouts/alerts" %>
 <div class="post-show-container">
     <p class="post-p2">Posted by <%= @post.user.email %> on <%= @post.created_at.to_s(:post_time) %></p>
-    <h3><%= @post.title %></h3>
+    <h3><%= @post.title %> <% if @post.updated_at != @post.created_at %>(updated)<% end %></h3>
     <p class="post-p3"><%= @post.content %></p>
     <div class="post-show-link-container">
         <%= link_to " Edit", edit_post_path(@post), class: "fas fa-pen" if current_user == @post.user %>
         <%= link_to " Delete", post_path(@post), class: "fas fa-trash-alt", method: :delete, data: { confirm: "Are you sure you want to delete this post?" } if current_user == @post.user %>
-        <%# <span><%= link_to 'Back to dashboard', dashboard_path %>
     </div>
     <p class="post-p4">Comment as <%= current_user.email %></p>
 </div>
