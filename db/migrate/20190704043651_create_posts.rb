@@ -5,8 +5,8 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.text :content, null: false
       t.timestamps
     end
-
+ 
     add_index(:posts, :id, unique: true)
     add_reference(:posts, :user, foreign_key: true)
   end
-end
+ end

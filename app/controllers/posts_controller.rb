@@ -29,7 +29,6 @@ class PostsController < ApplicationController
     end
 
     def update
-        @post = Post.find_by(id: params[:id])
         if @post.update(post_params)
             flash[:success] = 'Post successfully updated!'
             redirect_to @post
@@ -51,6 +50,6 @@ class PostsController < ApplicationController
     end
 
     def find_post
-        @post = Post.find_by(id: params[:id])
+        @post = Post.find(params[:id])
     end
 end

@@ -46,6 +46,10 @@ footer {
     display: grid;
 }
 
+.hidden {
+    display: none;
+}
+
 @media only screen and (min-width: 768px) {
     .navbar-expand-sm .navbar-collapse {
         display: none !important;

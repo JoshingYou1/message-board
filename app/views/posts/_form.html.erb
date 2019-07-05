@@ -9,7 +9,7 @@
             <%= f.label :content %>
             <%= f.text_area :content %>
         </div>
-        <% if edit_post_path(@post) %>
+        <% if @post.id != nil %>
             <div class="post-submit">
                 <%= f.submit 'Edit' %>
             </div>

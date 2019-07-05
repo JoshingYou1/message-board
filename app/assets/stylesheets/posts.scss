@@ -189,6 +189,9 @@
 .post-p4 {
     font-size: 12px;
     margin-top: 25px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .fa-pen, .fa-trash-alt {
@@ -207,4 +210,22 @@
     background-color: #e6efff;
     text-decoration: none;
     color: #003791;
+}
+
+.no-comment-container {
+    text-align: center;
+    margin: 2em 0 2em 0;
+    color: #7c7c7c;
+}
+
+.comment-div {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 16px;
+}
+
+.no-post-container, .no-post-container a {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
