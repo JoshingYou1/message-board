@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
     def create
         @comment = @post.comments.create(comment_params)
         @comment.user_id = current_user.id
-        @comment.user.email = current_user.email
+        @comment.save
         puts current_user.email
         puts @comment.user.email
 
@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
             redirect_to post_path(@post)
         else
             flash.now[:error] = 'Something went wrong. Your comment was not added to the post'
-            render 'new'
+            render 'posts/show'
         end
     end
 
@@ -41,7 +41,7 @@ class CommentsController < ApplicationController
     private
 
     def comment_params
-        params.require(:comment).permit(:comment_text, :post)
+        params.require(:comment).permit(:comment_text).merge(user: current_user)
     end
 
     def find_post

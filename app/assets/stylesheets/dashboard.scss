@@ -4,9 +4,55 @@
 .dashboard-container {
     height: 100%;
     text-align: center;
+    margin: 3em 20%;
 }
 
 .dashboard-container h1 {
-    margin: 1em 0 1em 0;
+    margin-bottom: 1em;
+}
+
+.dashboard-container h2 {
+    text-align: left;
+}
+
+.dashboard-post-container, .dashboard-comment-outer-container {
+    height: 220px;
+    overflow-y: auto;
+    padding-top: 10px;
+}
+
+.dashboard-comment-container-2 {
+    width: 100%;
+    background: white;
+    border-radius: 4px;
+    border-style: solid;
+    border-color: #cccccc;
+    border-width: 1px;
+    margin-bottom: 10px;
+}
+
+.dashboard-comment-container:hover {
+    border-color: #003791;
+}
+
+.dashboard-comment-container {
+    height: 300px;
+    overflow-y: auto;
+    padding-top: 10px;
+}
+
+.dashboard-comment-container-2 p {
+    padding: 10px;
+    margin: 0 !important;
+    text-align: left;
+}
+
+.comment-p1 {
+    font-size: 16px;
+}
+
+.comment-p2 {
+    color: #7d8082;
+    font-size: 12px;
 }
 
