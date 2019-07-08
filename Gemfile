@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 # Bootstrap
 gem 'bootstrap', '~> 4.0'
+#Popper for Bootstrap
+gem 'popper_js', '~> 1.14.5'
 #jQuery for rails
 gem 'jquery-rails'
 

@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
-    def home
-        if current_userl != nil
+    def show
+        if current_user != nil
             redirect_to '/dashboard'
         end
     end

@@ -5,20 +5,12 @@ class CommentsController < ApplicationController
         @comments = Comment.all.order('created_at ASC')
     end
 
-    def show
-    end
-
-    def new
-        @comment = Comment.new
-    end
-
     def create
-        @comment = @post.comments.create(comment_params)
+        @comment = @post.comments.build(comment_params)
         @comment.user_id = current_user.id
         @comment.save
         puts current_user.email
         puts @comment.user.email
-
 
         if @comment.save
             flash[:success] = 'Your comment has been added to the post'
@@ -41,7 +33,7 @@ class CommentsController < ApplicationController
     private
 
     def comment_params
-        params.require(:comment).permit(:comment_text).merge(user: current_user)
+        params.require(:comment).permit(:comment_text)
     end
 
     def find_post

@@ -1,9 +1,16 @@
+<%= render "layouts/alerts" %>
 <div class="dashboard-container">
     <% if current_user %>
-        <%= render "layouts/alerts" %>
         <h1 class="welcome">Welcome <%= current_user.first_name%>!</h1>
         <h2>Your Posts</h2>
-        <div class="dashboard-post-container">
+        <% if current_user.posts.count == 0 %>
+            <div class="dashboard-no-post-container">
+                <i class="fas fa-pen-square fa-3x"></i>
+                <h3>You haven't posted anything yet</h3>
+                <%= link_to 'Start a conversation', new_post_path %>
+            </div>
+        <% end %>
+        <div class="<%= current_user.posts.count == 0 ? 'hidden' : 'dashboard-post-container' %>">
             <% current_user.posts.each do |post| %>
                 <%= link_to post, class: "post-link" do %>
                     <div class="post-container">
@@ -18,7 +25,14 @@
             <% end %>
         </div>
         <h2>Your Comments</h2>
-        <div class="dashboard-comment-outer-container">
+        <% if current_user.comments.count == 0 %>
+            <div class="dashboard-no-comment-container">
+                <i class="fas fa-comments fa-3x"></i>
+                <h3>You haven't commented on any posts yet</h3>
+                <%= link_to 'See what everyone\'s chatting about', posts_path %>
+            </div>
+        <% end %>
+        <div class="<%= current_user.comments.count == 0 ? 'hidden' : 'dashboard-comment-outer-container' %>">
             <% current_user.comments.each do |comment| %>
                 <%= link_to comment.post, class: "post-link" do %>
                     <div class="dashboard-comment-container-2">

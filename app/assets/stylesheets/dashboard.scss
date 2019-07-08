@@ -31,7 +31,7 @@
     margin-bottom: 10px;
 }
 
-.dashboard-comment-container:hover {
+.dashboard-comment-container-2:hover {
     border-color: #003791;
 }
 
@@ -54,5 +54,33 @@
 .comment-p2 {
     color: #7d8082;
     font-size: 12px;
+}
+
+.dashboard-no-post-container, .dashboard-no-comment-container {
+    height: 160px;
+    background-color: white;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 3em;
+}
+
+.dashboard-no-post-container a, .dashboard-no-comment-container a {
+    margin-top: 10px;
+    color: #003791;
+    font-size: 18px;
+}
+
+.dashboard-no-post-container a:after, .dashboard-no-comment-container a:after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f35d";
+    display: inline-block;
+    font-weight: 900;
+    padding-left: 5px;
+}
+
+.dashboard-no-post-container a:hover, .dashboard-no-comment-container a:hover {
+    color: #003791;
 }
 

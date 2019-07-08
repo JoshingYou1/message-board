@@ -51,13 +51,19 @@ header {
     color: white;
 }
 
-.fa-user {
-    font-size: 20px;
+.header-right-container {
+    display: grid;
+    grid-column: 3 / last;
+    grid-template-columns: repeat(3, 1fr);
 }
 
-.mobile-hide {
-    display: none;
+.fa-user {
+    font-size: 22px;
 }
+
+// .mobile-hide {
+//     display: none;
+// }
 
 .dropdown-menu {
     right: 0 !important;
@@ -79,9 +85,9 @@ header {
 }
 
 .dropdown-menu a:hover {
-    color: #16181b;
+    color: white;
     text-decoration: none;
-    background-color: #f8f9fa;
+    background-color: #003791;
 }
 
 .navbar-nav .dropdown-menu {
@@ -95,10 +101,60 @@ header {
     justify-self: end;
 }
 
+.b {
+    vertical-align: middle;
+}
+
+.c {
+    font-size: 12px;
+    vertical-align: text-bottom;
+}
+
+.b {
+    font-size: 22px;
+    height: unset !important;
+    padding: unset !important;
+    border-radius: unset !important;
+    margin-right: unset !important;
+    padding-right: 2px !important;
+    color: inherit !important;
+}
+
+.b:hover {
+    background-color: #003791 !important;
+}
+
+.header-post-link-container {
+    padding: 0.5rem;
+    width: 54px;
+}
+
+.header-post-link-container {
+    color: white !important;
+}
+
+.header-post-link-container:hover {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white !important;
+    cursor: pointer;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.popover-body {
+    color: #003791 !important;
+    font-weight: 600;
+}
+
 @media only screen and (min-width: 768px) {
-    .desktop-hide {
-        display: none !important;
-    }
+    // .desktop-hide {
+    //     display: none !important;
+    // }
 
     .navbar-expand-sm .navbar-collapse {
         display: none !important;
