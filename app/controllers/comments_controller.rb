@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
         puts @comment.user.email
 
         if @comment.save
-            flash[:success] = 'Your comment has been added to the post'
+            flash[:success] = 'Your comment was added to the post'
             redirect_to post_path(@post)
         else
             flash.now[:error] = 'Something went wrong. Your comment was not added to the post'
@@ -21,13 +21,32 @@ class CommentsController < ApplicationController
         end
     end
 
-    def update
+    def edit
+        @comment = @post.comments.find(params[:id])
     end
 
-    def edit
+    def update
+        @comment = @post.comments.find(params[:id])
+
+        if @comment.update(comment_params)
+            flash[:success] = 'Your comment was successfully updated'
+            redirect_to post_path(@post)
+        else
+            flash.now[:error] = 'Something went wrong. Your comment was not updated'
+            render 'posts/show'
+        end
     end
 
     def destroy
+        @comment = @post.comments.find(params[:id])
+
+        if @comment.destroy
+            flash[:success] = 'Your comment was successfully removed from this post'
+            redirect_to post_path(@post)
+        else
+            flash.now[:error] = 'Something went wrong. Your comment was not removed'
+            render 'posts/show'
+        end
     end
 
     private

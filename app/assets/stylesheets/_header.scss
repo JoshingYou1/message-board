@@ -54,7 +54,9 @@ header {
 .header-right-container {
     display: grid;
     grid-column: 3 / last;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: end;
 }
 
 .fa-user {
@@ -90,6 +92,11 @@ header {
     background-color: #003791;
 }
 
+.navbar nav {
+    padding: 8px;
+    text-align: right;
+}
+
 .navbar-nav .dropdown-menu {
     position: absolute !important;
 }
@@ -99,15 +106,11 @@ header {
     flex-basis: unset !important;
     grid-column: 3 / 3;
     justify-self: end;
-}
-
-.b {
-    vertical-align: middle;
+    width: 55px;
 }
 
 .c {
     font-size: 12px;
-    vertical-align: text-bottom;
 }
 
 .b {
@@ -124,16 +127,25 @@ header {
     background-color: #003791 !important;
 }
 
-.header-post-link-container {
-    padding: 0.5rem;
-    width: 54px;
+.header-post-link-container, .header-post-link-container-2 {
+    padding: 8px;
+    width: 55px;
+    margin-right: 10px;
 }
 
 .header-post-link-container {
+    text-align: right;
+}
+
+.header-post-link-container-2 {
+    text-align: center
+}
+
+.header-post-link-container, .header-post-link-container-2 {
     color: white !important;
 }
 
-.header-post-link-container:hover {
+.header-post-link-container:hover, .header-post-link-container-2:hover {
     color: rgba(255, 255, 255, 0.75) !important;
 }
 
@@ -149,6 +161,10 @@ header {
 .popover-body {
     color: #003791 !important;
     font-weight: 600;
+}
+
+.fa-clipboard-list {
+    font-size: 22px;
 }
 
 @media only screen and (min-width: 768px) {

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end
-  resources :users, only: [:index, :create, :edit, :show, :update, :destroy, :new]
+  resources :users #, only: [:index, :create, :edit, :show, :update, :destroy, :new]
  
   # get 'register', to: 'users#new', as: 'register'
   get 'login', to: 'sessions#new', as: 'login'
