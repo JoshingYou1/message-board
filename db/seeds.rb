@@ -10,7 +10,7 @@ user_list = [
     [
         'Test',
         'McTester',
-        'Test@test.com',
+        'test@test.com',
         'test',
         'Pacific Time (US & Canada)'
     ],
@@ -24,7 +24,7 @@ user_list = [
 ]
 
 user_list.each do |first_name, last_name, email, password_digest, time_zone|
-    User.create(first_name: first_name, last_name: last_name, email: email, password_digest: password_digest, time_zone: time_zone)
+    User.create(first_name: first_name, last_name: last_name, email: email, password_digest: BCrypt::Password.create(password_digest), time_zone: time_zone)
 end
 
 post_list = [
@@ -46,7 +46,7 @@ post_list = [
 ]
 
 post_list.each do |title, content, user_id|
-    Post.creat(title: title, content: content, user_id: user_id)
+    Post.create(title: title, content: content, user_id: user_id)
 end
 
 comment_list = [
@@ -66,5 +66,11 @@ comment_list = [
         1
     ]
 ]
+
+comment_list.each do |comment_text, post_id, user_id|
+    Comment.create(comment_text: comment_text, post_id: post_id, user_id: user_id)
+end
+
+puts '~ Successfully seeded the database! ~'
 
 

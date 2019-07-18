@@ -1,23 +1,20 @@
 <div class="comment-div">
     <% if comment.id != nil %>
-        <% if comment.user.id == current_user.id %>
-            <p class="comment-p2">
-                <%= comment.user.email %>&nbsp;
-                <i 
-                    class="fas fa-id-badge" data-toggle="popover" data-delay='{"show":200, "hide":200}' 
-                    data-content="Original Poster" data-placement="top"
-                ></i>&nbsp;
-                <% if comment.updated_at != comment.created_at %>
-                    Edited on <%= comment.updated_at.to_s(:post_time) %>
-                <% else %>
-                    Commented on <%= comment.created_at.to_s(:post_time) %>
-                <% end %>
-            </p>
-        <% else %>
-            <p class="comment-p2"><%= comment.user.email %></p>
-        <% end %>
+        <p class="comment-p2">
+            <%= comment.user.email %>&nbsp;
+            <% if comment.user.id == comment.post.user.id %>
+            <i 
+                class="fas fa-id-badge" data-toggle="popover" data-delay='{"show":200, "hide":200}' 
+                data-content="Original Poster" data-placement="top"
+            ></i>&nbsp;
+            <% end %>
+            <% if comment.updated_at != comment.created_at %>
+                Edited on <%= comment.updated_at.to_s(:post_time) %>
+            <% else %>
+                Commented on <%= comment.created_at.to_s(:post_time) %>
+            <% end %>
+        </p>
         <p class="comment-p1"><%= comment.comment_text %></p>
-        <%#<%= link_to 'Edit', "/posts/#{comment.post.id}/comments/#{comment.id}/edit" %>
         <% if comment.user.id == current_user.id %>
             <%= link_to ' Edit', edit_post_comment_path(comment.post, comment), class: "fas fa-pen" %>
             <%= link_to ' Delete', [comment.post, comment], class: "fas fa-trash-alt", method: :delete, data: {confirm: 'Are you sure you want to delete your comment?'} %>
