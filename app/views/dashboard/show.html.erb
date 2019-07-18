@@ -42,8 +42,9 @@
                         <div class="comment-p2-container">
                             <% if comment.updated_at != comment.created_at %>
                                 <p class="comment-p2">Edited on <%= comment.updated_at.to_s(:post_time) %></p>
+                            <% else %>
+                                <p class="comment-p2">Commented on <%= comment.created_at.to_s(:post_time) %></p>
                             <% end %>
-                            <p class="comment-p2">Commented on <%= comment.created_at.to_s(:post_time) %></p>
                         </div>
                     </div>
                 <% end %>

@@ -1,6 +1,9 @@
 $(document).on('turbolinks:load', function () {
   $('[data-toggle="popover"]').popover({
-    placement : 'bottom',
     trigger : 'hover'
   });
+});
+
+document.addEventListener("turbolinks:before-cache", function () {
+  $('[data-toggle="popover"]').popover('hide');
 });
