@@ -29,12 +29,6 @@
     text-align: left;
 }
 
-// .post-p1-container, .post-p2-container, .post--p3container {
-//     height: 100%;
-//     display: inherit;
-//     align-items: center;
-// }
-
 .post-p1 {
     font-size: 20px;
     font-weight: bold;
@@ -54,6 +48,10 @@
     text-decoration: none;
     color: inherit;
 }
+
+// .new-post-link-container {
+    
+// }
 
 .new-post-link {
     display: block;
@@ -79,7 +77,6 @@
 
 .new-post-container, .edit-post-container {
     width: 40%;
-    width: 40%;
     margin: 3em auto;
     padding: 1em;
     background-color: white;
@@ -103,7 +100,7 @@
 .post-form-container input {
     width: 100%;
     display: inline-block;
-    padding: 0.6em 0;
+    padding: 0.4em 0;
     border: 1px solid #e9eaea;
     border-radius: 2px;
     text-indent: .8rem;
@@ -156,7 +153,7 @@
 .cancel-edit-post a {
     width: 100%;
     display: inherit;
-    padding: 0.6em 0;
+    padding: 0.4em 0;
     color: white;
 }
 
@@ -189,6 +186,9 @@
 .post-p4 {
     font-size: 12px;
     margin-top: 25px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .fa-pen, .fa-trash-alt {
@@ -207,4 +207,23 @@
     background-color: #e6efff;
     text-decoration: none;
     color: #003791;
+}
+
+.no-comment-container {
+    text-align: center;
+    margin: 2em 0 2em 0;
+    color: #7c7c7c;
+}
+
+.comment-div {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 16px;
+    padding: 8px 4px 0 0;
+}
+
+.no-post-container, .no-post-container a {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }

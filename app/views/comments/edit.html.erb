@@ -1,0 +1,19 @@
+<%= render "layouts/alerts" %>
+<div class="edit-comment-form-container">
+    <h1>Edit Comment</h1>
+    <%= form_for([@post, @comment]) do |f| %>
+        <%= f.hidden_field :comment_id, value: :post_id %>
+
+        <div class="edit-comment-container">
+            <%= f.label :comment_text, class: 'hidden' %>
+            <%= f.text_area :comment_text %>
+        </div>
+
+        <div class="edit-comment-submit">
+            <%= f.submit 'Edit' %>
+        </div>
+        <div class="cancel-edit-comment">
+            <%= link_to 'Cancel', post_path(@post) %>
+        </div>
+    <% end %>
+</div>

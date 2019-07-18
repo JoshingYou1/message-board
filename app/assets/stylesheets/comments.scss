@@ -1,0 +1,76 @@
+// Place all the styles related to the Comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.comment-container, .comment-submit {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.comment-container textarea, .edit-comment-container textarea {
+    min-height: 125px;
+    font-size: 14px;
+    padding: 8px 16px;
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+.comment-submit {
+    padding-bottom: 2em;
+    border-bottom: 1px solid #e9eaea;
+}
+
+.edit-comment-submit {
+    padding-bottom: 2em;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.comment-submit input, .edit-comment-submit input {
+    background-color: #003791;
+    color: white;
+    font-size: 20px;
+    border-radius: 4px;
+    border: none;
+    padding: 0.4em 0;
+    width: 150px;
+}
+
+.edit-comment-form-container {
+    width: 40%;
+    margin: 3em auto;
+    padding: 1em;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.edit-comment-form-container h1 {
+    margin-bottom: 1em;
+}
+
+.cancel-edit-comment {
+    display: inline-block;
+    margin: 0;
+    font-size: 20px;
+    width: 150px;
+    text-align: center;
+    border-radius: 4px;
+    background-color: red;
+}
+
+.cancel-edit-comment a {
+    width: 100%;
+    display: inherit;
+    padding: 0.4em 0;
+    color: white;
+}
+
+.cancel-edit-comment a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.fa-id-badge {
+    font-size: 16px;
+    vertical-align: middle;
+    color: #003791;
+}

@@ -1,5 +1,22 @@
 <%= render "layouts/alerts" %>
 <div class="posts-index-container">
+    <div class="new-post-link-container">
+        <%= link_to new_post_path, class: "new-post-link" do %>
+            New Post <i class="fas fa-plus"></i>
+        <% end %>
+    </div>
+    <% if @posts.count == 0 %>
+        <div class="no-post-container">
+            <i class="fas fa-pen-square fa-3x"></i>
+            <h3>No posts have been created on this forum</h3>
+            <h5>Be the first to start a conversation</h5>
+            <div>
+                <%= link_to new_post_path, class: "new-post-link" do %>
+                    New Post <i class="fas fa-plus"></i>
+                <% end %>
+            </div>
+        </div>
+    <% end %>
     <% @posts.each do |post| %>
         <%= link_to post, class: "post-link" do %>
         <div class="post-container">
@@ -12,9 +29,4 @@
         </div>
         <% end %>
     <% end %>
-    <div>
-        <%= link_to new_post_path, class: "new-post-link" do %>
-            New Post <i class="fas fa-plus"></i>
-        <% end %>
-    </div>
 </div>

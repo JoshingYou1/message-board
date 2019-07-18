@@ -1,0 +1,13 @@
+<div class="comment-form-container">
+    <%# <h2>Chat about your favorite games</h2> %>
+    <%= form_for([@post, @post.comments.build]) do |f| %>
+        <%= f.hidden_field :comment_id, value: :post_id %>
+        <div class="comment-container">
+            <%= f.label :comment_text, class: 'hidden' %>
+            <%= f.text_area :comment_text, placeholder: 'What are your thoughts?' %>
+        </div>
+        <div class="comment-submit">
+            <%= f.submit 'Comment' %>
+        </div>
+    <% end %>
+</div>

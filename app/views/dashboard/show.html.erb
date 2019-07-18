@@ -1,10 +1,54 @@
+<%= render "layouts/alerts" %>
 <div class="dashboard-container">
     <% if current_user %>
-        <%= render "layouts/alerts" %>
-        <h1 class="welcome">Welcome to your dashboard!</h1>
-    <% else %>
-        <%= flash[:error] = 'Sorry, but you must be logged in to view your dashboard.' %>
-        <%= controller.redirect_to '/' %>
+        <h1 class="welcome">Welcome <%= current_user.first_name%>!</h1>
+        <h2>Your Posts</h2>
+        <% if current_user.posts.count == 0 %>
+            <div class="dashboard-no-post-container">
+                <i class="fas fa-pen-square fa-3x"></i>
+                <h3>You haven't posted anything yet</h3>
+                <%= link_to 'Start a conversation', new_post_path %>
+            </div>
+        <% end %>
+        <div class="<%= current_user.posts.count == 0 ? 'hidden' : 'dashboard-post-container' %>">
+            <% current_user.posts.each do |post| %>
+                <%= link_to post, class: "post-link" do %>
+                    <div class="post-container">
+                        <div>
+                            <p class="post-p1"><%= post.title %> <% if post.updated_at != post.created_at %>(updated)<% end %></p>
+                        </div>
+                        <div class="post-p2-container">
+                            <p class="post-p2">Posted on <%= post.created_at.to_s(:post_time) %></p>
+                        </div>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
+        <h2>Your Comments</h2>
+        <% if current_user.comments.count == 0 %>
+            <div class="dashboard-no-comment-container">
+                <i class="fas fa-comments fa-3x"></i>
+                <h3>You haven't commented on any posts yet</h3>
+                <%= link_to 'See what everyone\'s chatting about', posts_path %>
+            </div>
+        <% end %>
+        <div class="<%= current_user.comments.count == 0 ? 'hidden' : 'dashboard-comment-outer-container' %>">
+            <% current_user.comments.each do |comment| %>
+                <%= link_to comment.post, class: "post-link" do %>
+                    <div class="dashboard-comment-container-2">
+                        <div class="dashboard-comment-text-container">
+                            <p class="comment-p1"><%= comment.comment_text %></p>
+                        </div>
+                        <div class="comment-p2-container">
+                            <% if comment.updated_at != comment.created_at %>
+                                <p class="comment-p2">Edited on <%= comment.updated_at.to_s(:post_time) %></p>
+                            <% else %>
+                                <p class="comment-p2">Commented on <%= comment.created_at.to_s(:post_time) %></p>
+                            <% end %>
+                        </div>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
     <% end %>
-    <p id='notice'><%= notice %></p>
 </div>

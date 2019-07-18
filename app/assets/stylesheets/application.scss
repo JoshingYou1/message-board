@@ -46,10 +46,28 @@ footer {
     display: grid;
 }
 
+.hidden {
+    display: none;
+}
+
+.dropdown-item:hover {
+    background-color: white !important;
+}
+
+.navbar nav {
+    display: block !important;
+}
+
+.navbar-expand-sm .navbar-nav {
+    flex-direction: unset;
+}
+
+.ml-auto {
+    margin-left: 0 !important;
+}
+
 @media only screen and (min-width: 768px) {
-    .navbar-expand-sm .navbar-collapse {
-        display: none !important;
-    }
+    
 }
 
 @media only screen and (min-width: 1000px) {

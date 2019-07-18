@@ -1,5 +1,9 @@
 class SessionsController < ApplicationController
     def new
+        if current_user != nil
+            flash[:alert] = "You\'re already logged in #{current_user.first_name}"
+            redirect_to dashboard_path
+        end
     end
 
     def create

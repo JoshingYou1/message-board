@@ -51,13 +51,21 @@ header {
     color: white;
 }
 
-.fa-user {
-    font-size: 20px;
+.header-right-container {
+    display: grid;
+    grid-column: 3 / last;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: end;
 }
 
-.mobile-hide {
-    display: none;
+.fa-user {
+    font-size: 22px;
 }
+
+// .mobile-hide {
+//     display: none;
+// }
 
 .dropdown-menu {
     right: 0 !important;
@@ -79,9 +87,14 @@ header {
 }
 
 .dropdown-menu a:hover {
-    color: #16181b;
+    color: white;
     text-decoration: none;
-    background-color: #f8f9fa;
+    background-color: #003791;
+}
+
+.navbar nav {
+    padding: 8px;
+    text-align: right;
 }
 
 .navbar-nav .dropdown-menu {
@@ -93,12 +106,71 @@ header {
     flex-basis: unset !important;
     grid-column: 3 / 3;
     justify-self: end;
+    width: 55px;
+}
+
+.c {
+    font-size: 12px;
+}
+
+.b {
+    font-size: 22px;
+    height: unset !important;
+    padding: unset !important;
+    border-radius: unset !important;
+    margin-right: unset !important;
+    padding-right: 2px !important;
+    color: inherit !important;
+}
+
+.b:hover {
+    background-color: #003791 !important;
+}
+
+.header-post-link-container, .header-post-link-container-2 {
+    padding: 8px;
+    width: 55px;
+    margin-right: 10px;
+}
+
+.header-post-link-container {
+    text-align: right;
+}
+
+.header-post-link-container-2 {
+    text-align: center
+}
+
+.header-post-link-container, .header-post-link-container-2 {
+    color: white !important;
+}
+
+.header-post-link-container:hover, .header-post-link-container-2:hover {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white !important;
+    cursor: pointer;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.popover-body {
+    color: #003791 !important;
+    font-weight: 600;
+}
+
+.fa-clipboard-list {
+    font-size: 22px;
 }
 
 @media only screen and (min-width: 768px) {
-    .desktop-hide {
-        display: none !important;
-    }
+    // .desktop-hide {
+    //     display: none !important;
+    // }
 
     .navbar-expand-sm .navbar-collapse {
         display: none !important;

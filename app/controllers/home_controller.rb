@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
-    def home
-        if current_userl != nil
+    def show
+        if current_user != nil
+            flash[:alert] = 'You must log out before visiting the home page'
             redirect_to '/dashboard'
         end
     end
