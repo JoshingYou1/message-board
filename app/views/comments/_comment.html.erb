@@ -1,5 +1,5 @@
-<div class="comment-div">
-    <% if comment.id != nil %>
+<% if comment.id != nil %>
+    <div class="comment-div">
         <p class="comment-p2">
             <%= comment.user.email %>&nbsp;
             <% if comment.user.id == comment.post.user.id %>
@@ -19,5 +19,5 @@
             <%= link_to ' Edit', edit_post_comment_path(comment.post, comment), class: "fas fa-pen" %>
             <%= link_to ' Delete', [comment.post, comment], class: "fas fa-trash-alt", method: :delete, data: {confirm: 'Are you sure you want to delete your comment?'} %>
         <% end %>
-    <% end %>
-</div>
+    </div>
+<% end %>
