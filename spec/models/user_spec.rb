@@ -12,7 +12,7 @@ RSpec.describe User, type: :model do
   end
 
   context 'Validations' do
-    it 'Should error if email is not valid' do
+    it 'Should error if email is missing' do
       new_user = User.new
       new_user.first_name = 'john'
       new_user.last_name = 'doe'
@@ -22,7 +22,7 @@ RSpec.describe User, type: :model do
       expect(new_user).to_not be_valid
     end
 
-    it 'Should error if first_name is not valid' do
+    it 'Should error if first_name is missing' do
       new_user = User.new
       new_user.first_name = ''
       new_user.last_name = 'doe'
@@ -32,7 +32,7 @@ RSpec.describe User, type: :model do
       expect(new_user).to_not be_valid
     end
 
-    it 'Should error if last_name is not valid' do
+    it 'Should error if last_name is missing' do
       new_user = User.new
       new_user.first_name = 'john'
       new_user.last_name = ''
@@ -42,12 +42,12 @@ RSpec.describe User, type: :model do
       expect(new_user).to_not be_valid
     end
 
-    it 'Should error if a password is not entered' do
+    it 'Should error if password is mising' do
       new_user = User.new
       new_user.first_name = 'john'
       new_user.last_name = 'doe'
       new_user.email = 'john@mail.com'
-      new_user.password = nil
+      new_user.password = ''
       expect(new_user).to_not be_valid
     end
 
@@ -61,7 +61,7 @@ RSpec.describe User, type: :model do
       expect(new_user).to_not be_valid
     end
 
-    it 'Should be valid if password confirmation does match' do
+    it 'Should be valid if all fields are entered correctly' do
       new_user = User.new
       new_user.first_name = 'john'
       new_user.last_name = 'doe'
