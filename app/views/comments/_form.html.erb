@@ -1,5 +1,4 @@
 <div class="comment-form-container">
-    <%# <h2>Chat about your favorite games</h2> %>
     <%= form_for([@post, @post.comments.build]) do |f| %>
         <%= f.hidden_field :comment_id, value: :post_id %>
         <div class="comment-container">

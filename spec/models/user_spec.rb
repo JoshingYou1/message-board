@@ -12,63 +12,45 @@ RSpec.describe User, type: :model do
   end
 
   context 'Validations' do
+    subject { 
+      described_class.new(
+        first_name: 'john',
+        last_name: 'doe',
+        email: 'JDoe@mail.com',
+        time_zone: 'UTC',
+        password: 'test',
+        password_confirmation: 'test'
+      )
+    }
     it 'Should error if email is missing' do
-      new_user = User.new
-      new_user.first_name = 'john'
-      new_user.last_name = 'doe'
-      new_user.email = ''
-      new_user.password = 'test'
-      new_user.password_confirmation = 'test'
-      expect(new_user).to_not be_valid
+      subject.email = nil
+      expect(subject).to_not be_valid
     end
 
     it 'Should error if first_name is missing' do
-      new_user = User.new
-      new_user.first_name = ''
-      new_user.last_name = 'doe'
-      new_user.email = 'john@mail.com'
-      new_user.password = 'test'
-      new_user.password_confirmation = 'test'
-      expect(new_user).to_not be_valid
+      subject.first_name = nil
+      expect(subject).to_not be_valid
     end
 
     it 'Should error if last_name is missing' do
-      new_user = User.new
-      new_user.first_name = 'john'
-      new_user.last_name = ''
-      new_user.email = 'john@mail.com'
-      new_user.password = 'test'
-      new_user.password_confirmation = 'test'
-      expect(new_user).to_not be_valid
+      subject.last_name = nil
+      expect(subject).to_not be_valid
     end
 
     it 'Should error if password is mising' do
-      new_user = User.new
-      new_user.first_name = 'john'
-      new_user.last_name = 'doe'
-      new_user.email = 'john@mail.com'
-      new_user.password = ''
-      expect(new_user).to_not be_valid
+      subject.password = nil
+      expect(subject).to_not be_valid
     end
 
     it 'Should error if password confirmation does not match' do
-      new_user = User.new
-      new_user.first_name = 'john'
-      new_user.last_name = 'doe'
-      new_user.email = 'john@mail.com'
-      new_user.password = 'test'
-      new_user.password_confirmation = 'test1'
-      expect(new_user).to_not be_valid
+      subject.password_confirmation = 'test1'
+      expect(subject).to_not be_valid
     end
 
     it 'Should be valid if all fields are entered correctly' do
-      new_user = User.new
-      new_user.first_name = 'john'
-      new_user.last_name = 'doe'
-      new_user.email = 'john@mail.com'
-      new_user.password = 'test'
-      new_user.password_confirmation = 'test'
-      expect(new_user).to be_valid
+      # Must use a new email due to uniqeness attr
+      subject.email = 'J@mail.com'
+      expect(subject).to be_valid
     end
   end
 end
